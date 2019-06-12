@@ -13,7 +13,7 @@ struct ContentView : View {
     @EnvironmentObject var LookBackViewModel: LookBackViewModel
     var body: some View {
         TabbedView(selection: $selection){
-            SensorView(image: LookBackViewModel.image)
+            SensorView(image: LookBackViewModel.imageName)
                 .font(.title)
                 .tabItemLabel(Image("game"))
                 .tag(0)

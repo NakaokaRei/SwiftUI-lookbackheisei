@@ -18,7 +18,7 @@ final class LookBackViewModel: BindableObject  {
     var gyro_z: Double!
     var degree:Double! = 0
     
-    var image = "heisei" {
+    var imageName = "heisei" {
         didSet {
             didChange.send(self)
         }
@@ -39,10 +39,10 @@ final class LookBackViewModel: BindableObject  {
     func loop(angular: Double){
         self.degree += angular * 0.1 * 57.2
         if self.degree >= 90{
-            self.image = "left"
+            self.imageName = "left"
             self.degree = 0
         } else if -self.degree >= 90{
-            self.image = "right"
+            self.imageName = "right"
             self.degree = 0
         }
     }
