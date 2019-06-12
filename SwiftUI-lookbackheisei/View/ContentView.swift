@@ -10,9 +10,10 @@ import SwiftUI
 
 struct ContentView : View {
     @State private var selection = 0
+    @EnvironmentObject var LookBackViewModel: LookBackViewModel
     var body: some View {
         TabbedView(selection: $selection){
-            SensorView()
+            SensorView(image: LookBackViewModel.image)
                 .font(.title)
                 .tabItemLabel(Image("game"))
                 .tag(0)

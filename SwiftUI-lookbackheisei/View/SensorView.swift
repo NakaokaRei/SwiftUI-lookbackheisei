@@ -9,24 +9,20 @@
 import SwiftUI
 
 struct SensorView : View {
+    var image: String
     var body: some View {
-        NavigationView{
-            List{
-                Image("heisei")
-                    .resizable()
-                    .padding(.vertical, 28.0)
-                    .frame(width: 370, height: 650)
-                    .aspectRatio(contentMode: .fit)
-            }
-            .navigationBarTitle(Text("Sensor"))
-        }
+            Image(image)
+                .resizable()
+                .padding(.vertical, 28.0)
+                .frame(width: 300, height: 550)
+                .aspectRatio(contentMode: .fit)
     }
 }
 
 #if DEBUG
 struct SensorView_Previews : PreviewProvider {
     static var previews: some View {
-        SensorView()
+        SensorView(image: "heisei")
     }
 }
 #endif
