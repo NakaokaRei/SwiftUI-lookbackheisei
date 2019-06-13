@@ -31,7 +31,7 @@ struct CardView : View {
                 PresentationButton(
                     Text("READ MORE")
                         .color(.blue)
-                    , destination: ReadMoreView())
+                    , destination: ReadMoreView(url: newsModel.url))
                 }
                 .padding(.top)
 

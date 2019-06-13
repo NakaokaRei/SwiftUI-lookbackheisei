@@ -7,11 +7,21 @@
 //
 
 import SwiftUI
+import WebKit
 
-struct ReadMoreView : View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+struct ReadMoreView : UIViewRepresentable {
+    var url: String!
+    
+    func makeUIView(context: Context) -> WKWebView {
+        WKWebView(frame: .zero)
     }
+    
+    func updateUIView(_ view: WKWebView, context: Context) {
+        let urlNS = NSURL(string: url)
+        let req = NSURLRequest(url:urlNS! as URL)
+        view.load(req as URLRequest)
+    }
+    
 }
 
 #if DEBUG
