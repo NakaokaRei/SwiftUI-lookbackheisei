@@ -9,22 +9,23 @@
 import SwiftUI
 
 struct CardView : View {
+    var newsModel: NewsModel!
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Image("sample")
+                Image(uiImage: self.getImageByUrl(url: newsModel.img))
                     .resizable()
                     .frame(width: 300, height: 200)
                     .aspectRatio(contentMode: .fit)
                 Spacer()
             }
-                Text("ここにタイトルを表示")
+                Text(newsModel!.title)
                     .font(.title)
-                Text("日付: 10/20")
+            Text("date: \(newsModel.date)")
                     .font(.subheadline)
                     .color(.gray)
-                Text("ジャンル: サンプル")
+            Text("ジャンル: \(newsModel.genre)")
                     .font(.subheadline)
                     .color(.gray)
                 PresentationButton(
@@ -33,9 +34,20 @@ struct CardView : View {
                     , destination: ReadMoreView())
                 }
                 .padding(.top)
-        
 
     }
+    
+    func getImageByUrl(url: String) -> UIImage{
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+            return UIImage(data: data)!
+        } catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        return UIImage()
+    }
+    
 }
 
 #if DEBUG

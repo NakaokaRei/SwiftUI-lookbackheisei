@@ -1,0 +1,6 @@
+framework module Pods_SwiftUI_lookbackheiseiUITests {
+  umbrella header "Pods-SwiftUI-lookbackheiseiUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -17,7 +17,7 @@ struct ContentView : View {
                 .font(.title)
                 .tabItemLabel(Image("game"))
                 .tag(0)
-            NewsListView()
+            NewsListView(newsList: LookBackViewModel.newsList)
                 .font(.title)
                 .tabItemLabel(Image("doc"))
                 .tag(1)

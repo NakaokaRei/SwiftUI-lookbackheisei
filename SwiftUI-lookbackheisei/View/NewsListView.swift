@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct NewsListView : View {
+    var newsList: [NewsModel]!
     var body: some View {
         NavigationView{
             List{
-                ForEach(0 ..< 7) { item in
-                    CardView()
+                ForEach(newsList.identified(by: \.self)) { news in
+                    CardView(newsModel: news)
                 }
             }
-            .navigationBarTitle(Text("Cards"))
+            .navigationBarTitle(Text("News"))
         }
     }
 }
