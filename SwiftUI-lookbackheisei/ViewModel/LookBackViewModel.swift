@@ -17,9 +17,6 @@ final class LookBackViewModel: BindableObject  {
     let url = [
         "twitter": "https://script.google.com/macros/s/AKfycbyhR8HyQKcf2b9wRUmsCm-6D_EK1zFlJzIpPIhrBuRd49FVFtpT/exec",
         "heisei": "https://script.google.com/macros/s/AKfycbxc-TKyZ8Lp-9Ed05et_wIGw55RLGBGwhNSY2lb2z9iQdy1wLs/exec"]
-    var gyro_x: Double! = 0
-    var gyro_y: Double! = 0
-    var gyro_z: Double! = 0
     var degree: Double! = 0
     
     var imageName = "heisei" {
@@ -56,9 +53,6 @@ final class LookBackViewModel: BindableObject  {
         motionManager.startDeviceMotionUpdates( to: OperationQueue.current!, withHandler:{
             deviceManager, error in
             let gyro: CMRotationRate = deviceManager!.rotationRate
-            self.gyro_x = gyro.x
-            self.gyro_y = gyro.y
-            self.gyro_z = gyro.z
             self.loop(angular: gyro.y)
         })
     }
