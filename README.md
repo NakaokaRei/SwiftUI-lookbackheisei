@@ -17,6 +17,3 @@
 ## 使用技術
 * SwiftUI
 * Alamofire 
-
-## LICENSE
-* [MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
