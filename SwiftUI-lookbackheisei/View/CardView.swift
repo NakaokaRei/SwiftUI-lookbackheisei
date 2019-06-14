@@ -20,7 +20,7 @@ struct CardView : View {
                     .aspectRatio(contentMode: .fit)
                 Spacer()
             }
-                Text(newsModel!.title)
+                Text(newsModel.title)
                     .font(.title)
             Text("date: \(newsModel.date)")
                     .font(.subheadline)

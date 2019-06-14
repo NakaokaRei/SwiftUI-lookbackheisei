@@ -20,7 +20,7 @@ final class LookBackViewModel: BindableObject  {
     var gyro_x: Double! = 0
     var gyro_y: Double! = 0
     var gyro_z: Double! = 0
-    var degree:Double! = 0
+    var degree: Double! = 0
     
     var imageName = "heisei" {
         didSet {
