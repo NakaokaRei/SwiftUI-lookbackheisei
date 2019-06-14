@@ -10,7 +10,7 @@
 
 ## 開発環境
 * macOS 10.15 Beta
-
+* iOS13
 * Xcode11 Beta
 * Swift5
 
