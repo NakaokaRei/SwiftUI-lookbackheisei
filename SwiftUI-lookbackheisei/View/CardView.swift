@@ -53,7 +53,11 @@ struct CardView : View {
 #if DEBUG
 struct CardView_Previews : PreviewProvider {
     static var previews: some View {
-        CardView()
+        CardView(newsModel: NewsModel(title: "sample",
+                                      url: "https://github.com/",
+                                      date: "2020/10",
+                                      img: "http://wwwjp.kodak.com/JP/images/ja/digital/digitalcamera/standard/c330/sample/C330_02.jpg",
+                                      genre: "sample"))
     }
 }
 #endif

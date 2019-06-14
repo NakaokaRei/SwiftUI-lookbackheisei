@@ -27,7 +27,7 @@ struct ReadMoreView : UIViewRepresentable {
 #if DEBUG
 struct ReadMoreView_Previews : PreviewProvider {
     static var previews: some View {
-        ReadMoreView()
+        ReadMoreView(url: "https://github.com/")
     }
 }
 #endif

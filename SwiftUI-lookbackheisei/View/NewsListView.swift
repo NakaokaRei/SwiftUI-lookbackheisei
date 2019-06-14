@@ -25,7 +25,7 @@ struct NewsListView : View {
 #if DEBUG
 struct NewsListView_Previews : PreviewProvider {
     static var previews: some View {
-        NewsListView()
+        NewsListView(newsList: LookBackViewModel().newsList)
     }
 }
 #endif
