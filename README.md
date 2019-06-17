@@ -15,7 +15,7 @@
 * Swift5
 
 ## アーキテクチャ
-
+* MVVM
 
 ## 使用技術
 * SwiftUI
