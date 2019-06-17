@@ -14,6 +14,9 @@
 * Xcode11 Beta
 * Swift5
 
+## アーキテクチャ
+
+
 ## 使用技術
 * SwiftUI
 * Alamofire 
