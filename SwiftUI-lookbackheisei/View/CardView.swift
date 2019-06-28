@@ -20,19 +20,19 @@ struct CardView : View {
                     .aspectRatio(contentMode: .fit)
                 Spacer()
             }
-                Text(newsModel.title)
-                    .font(.title)
+            Text(newsModel.title)
+                .font(.title)
             Text("date: \(newsModel.date)")
                     .font(.subheadline)
                     .color(.gray)
             Text("ジャンル: \(newsModel.genre)")
                     .font(.subheadline)
                     .color(.gray)
-                PresentationButton(
-                    Text("READ MORE")
-                        .color(.blue)
-                    , destination: ReadMoreView(url: newsModel.url))
-                }
+            PresentationButton(
+                Text("READ MORE")
+                    .color(.blue)
+                , destination: ReadMoreView(url: newsModel.url))
+            }
                 .padding(.top)
 
     }
