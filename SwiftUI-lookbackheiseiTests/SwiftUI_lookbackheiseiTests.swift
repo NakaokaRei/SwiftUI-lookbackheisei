@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SwiftUI_lookbackheisei
+@testable import SwiftUI_lookbackheiseiTests
 
 class SwiftUI_lookbackheiseiTests: XCTestCase {
 

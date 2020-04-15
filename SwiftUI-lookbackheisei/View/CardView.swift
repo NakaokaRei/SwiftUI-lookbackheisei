@@ -10,33 +10,36 @@ import SwiftUI
 
 struct CardView : View {
     var newsModel: NewsModel!
+    let width: CGFloat = 300
+    let height: CGFloat = 200
+    @State var show = false
     var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                Image(uiImage: self.getImageByUrl(url: newsModel.img))
-                    .resizable()
-                    .frame(width: 300, height: 200)
-                    .aspectRatio(contentMode: .fit)
-                Spacer()
-            }
-            Text(newsModel.title)
-                .font(.title)
-            Text("date: \(newsModel.date)")
-                    .font(.subheadline)
-                    .color(.gray)
-            Text("ジャンル: \(newsModel.genre)")
-                    .font(.subheadline)
-                    .color(.gray)
-            PresentationButton(
-                Text("READ MORE")
-                    .color(.blue)
-                , destination: ReadMoreView(url: newsModel.url))
-            }
-                .padding(.top)
-
-    }
-    
+            VStack {
+                HStack {
+                    Spacer()
+                    Image(uiImage: self.getImageByUrl(url: (newsModel?.img)!))
+                        .resizable()
+                        .frame(width: width, height: height)
+                        .aspectRatio(contentMode: .fit)
+                    Spacer()
+                }
+                Text(String(newsModel!.title))
+                    .font(.title)
+                Text("date: \(newsModel.date)")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                Text("ジャンル: \(newsModel.genre)")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                Button(action:{self.show.toggle()}){
+                    Text("Read More")
+                }.sheet(isPresented: $show){
+                    ReadMoreView(url: self.newsModel.url)
+                }
+                    }.padding(.top)
+                }
+                
+            
     func getImageByUrl(url: String) -> UIImage{
         let url = URL(string: url)
         do {
@@ -47,8 +50,8 @@ struct CardView : View {
         }
         return UIImage()
     }
-    
 }
+
 
 #if DEBUG
 struct CardView_Previews : PreviewProvider {

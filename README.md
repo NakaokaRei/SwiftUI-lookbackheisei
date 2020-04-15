@@ -20,3 +20,6 @@
 ## 使用技術
 * SwiftUI
 * Alamofire 
+
+## URL
+* [Qiita](https://qiita.com/NakaokaRei/items/e7bdcf70e60f96a57677)

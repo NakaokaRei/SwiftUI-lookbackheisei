@@ -12,15 +12,17 @@ struct ContentView : View {
     @State private var selection = 0
     @EnvironmentObject var LookBackViewModel: LookBackViewModel
     var body: some View {
-        TabbedView(selection: $selection){
-            SensorView(image: LookBackViewModel.imageName)
-                .font(.title)
-                .tabItemLabel(Image("game"))
-                .tag(0)
-            NewsListView(newsList: LookBackViewModel.newsList)
-                .font(.title)
-                .tabItemLabel(Image("doc"))
-                .tag(1)
+        TabView{
+            SensorView()
+                .tabItem {
+                    Image(systemName: "1.square.fill")
+                    Text("First")
+                }
+            NewsListView()
+                .tabItem {
+                    Image(systemName: "2.square.fill")
+                    Text("Second")
+                }
         }
     }
 }

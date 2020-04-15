@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct SensorView : View {
-    var image: String
+    @EnvironmentObject var LookBackViewModel: LookBackViewModel
     var body: some View {
-            Image(image)
+        Image(LookBackViewModel.imageName)
                 .resizable()
                 .padding(.vertical, 28.0)
                 .frame(width: 300, height: 550)
@@ -22,7 +22,7 @@ struct SensorView : View {
 #if DEBUG
 struct SensorView_Previews : PreviewProvider {
     static var previews: some View {
-        SensorView(image: "heisei")
+        SensorView().environmentObject(LookBackViewModel())
     }
 }
 #endif

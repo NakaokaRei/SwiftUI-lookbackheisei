@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct NewsListView : View {
-    var newsList: [NewsModel]!
+    @EnvironmentObject var LookBackViewModel: LookBackViewModel
     var body: some View {
         NavigationView{
             List{
-                ForEach(newsList.identified(by: \.self)) { news in
+                ForEach(LookBackViewModel.newsList, id: \.self) { news in
                     CardView(newsModel: news)
                 }
             }
@@ -25,7 +25,7 @@ struct NewsListView : View {
 #if DEBUG
 struct NewsListView_Previews : PreviewProvider {
     static var previews: some View {
-        NewsListView(newsList: LookBackViewModel().newsList)
+        NewsListView().environmentObject(LookBackViewModel())
     }
 }
 #endif

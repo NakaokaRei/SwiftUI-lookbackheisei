@@ -11,26 +11,14 @@ import Combine
 import CoreMotion
 import Alamofire
 
-final class LookBackViewModel: BindableObject  {
-    let didChange = PassthroughSubject<LookBackViewModel, Never>()
+final class LookBackViewModel: ObservableObject  {
     let motionManager = CMMotionManager()
     let url = [
         "twitter": "https://script.google.com/macros/s/AKfycbyhR8HyQKcf2b9wRUmsCm-6D_EK1zFlJzIpPIhrBuRd49FVFtpT/exec",
         "heisei": "https://script.google.com/macros/s/AKfycbxc-TKyZ8Lp-9Ed05et_wIGw55RLGBGwhNSY2lb2z9iQdy1wLs/exec"]
     var degree: Double! = 0
-    
-    var imageName = "heisei" {
-        didSet {
-            didChange.send(self)
-        }
-    }
-    
-    var newsList: [NewsModel] = [] {
-        didSet {
-            didChange.send(self)
-        }
-    }
-    
+    @Published var imageName = "heisei"
+    @Published var newsList: [NewsModel] = []
     init() {
         self.motionCapture()
     }

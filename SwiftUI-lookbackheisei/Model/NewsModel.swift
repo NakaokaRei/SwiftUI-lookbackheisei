@@ -10,9 +10,9 @@ import SwiftUI
 import Foundation
 
 struct NewsModel: Hashable, Codable {
-    let title: String
-    let url: String
-    let date: String
-    let img: String
-    let genre: String
+    var title: String
+    var url: String
+    var date: String
+    var img: String
+    var genre: String
 }
