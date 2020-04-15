@@ -9,9 +9,9 @@
 ![](image/lookbackheisei.gif)
 
 ## 開発環境
-* macOS 10.15 Beta
+* macOS 10.15
 * iOS13
-* Xcode11 Beta
+* Xcode11
 * Swift5
 
 ## アーキテクチャ
